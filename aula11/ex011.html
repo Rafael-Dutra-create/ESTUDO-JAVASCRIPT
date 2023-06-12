@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Confirmando a sua Nacionalidade</h1>
+    Pais de origem: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="confirmar()">
+    
+    <div id="res">
+
+    </div>
+
+    <script>
+        function confirmar(){
+            var txtpais = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+            var pais = String(txtpais.value)        
+            if(pais == `Brasil`){
+                res.innerHTML += `<p>Você é Brasileiro por ter nascido no ${pais}!</p>`
+            }
+            else{
+                if(pais == `EUA`){
+                    res.innerHTML += `<p>Você é Gringo por ter nascido nos ${pais}!</p>`
+                }else{
+                    if(pais == `Argentina`){
+                        res.innerHTML += `<p>Você é Boludo por ter nascido na ${pais}!</p>`
+                    }else{
+                        res.innerHTML += `<p>Você é estrangeiro por ter nascido no(a) ${pais}!</p>`
+                    }
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>
